@@ -1,0 +1,4 @@
+1) Jobs documentation
+
+post [jobs/postjob]
+Requirements: (title, description)

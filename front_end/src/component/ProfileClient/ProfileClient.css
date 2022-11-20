@@ -1,0 +1,73 @@
+
+.app_profil_client {
+    margin-top: 100px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;  
+    font-size: 15px;
+}
+.ed_fonts {
+    font-size: 20px;
+    color: #555;
+    width: 25px;
+    text-align: center;
+    transition: all .5s;
+}
+.data_profile_client h4 {
+    border-right: 2px solid #ffb200;
+    padding-right: 5px;
+}
+.data_profile_client ul {
+    margin-top: 25px;
+    padding: 0;
+}
+.data_profile_client ul li {
+    /* width: 390px; */
+    cursor: pointer;
+    margin: 10px 0;
+    
+    
+}
+.data_profile_client ul li:hover .ed_fonts  {
+    color: #ffb200;
+}
+.ed_text_c {
+    font-size: 15px;
+}
+.ed_image_client {
+    background-image: linear-gradient(to left, var(--main-color),#FFF,#FFF);
+
+}
+.data_profile_client ul {
+    list-style: none;
+    padding:10px 5px;
+    border-bottom:1px solid #99999947;
+}
+.bordr_box_data {
+    border-left: 1px solid #EEE;
+}
+
+/* Start Media Q */
+
+@media (max-width: 760px) {
+
+    .data_profile_client ul {
+        margin-top: 20px;
+    }
+    .data_profile_client ul li {
+        width: 100%;
+    }
+    .ed_fonts {
+        font-size: 13px;
+    }
+    .ed_text_c  {
+        font-size: 15px;
+    }
+    .data_client {
+        font-size: 12px;
+    }
+    .image_profile {
+        height: 196px;
+    }
+}
+
+

@@ -1,0 +1,261 @@
+/* Parent */
+.twoSlidS .categories .c_one {
+    list-style: none;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.twoSlidS .categories .c_one h4 {
+    border-right: 2px solid var(--main-color);
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.twoSlidS .categories .c_one li {
+    font-size: 15px;
+    padding: 10px 0;
+    position: relative;
+    cursor: pointer;
+    transition: all .5s;
+
+}
+
+.twoSlidS .categories .c_one li i {
+    color: #555;
+    margin-left: 10px;
+}
+
+.twoSlidS .categories .c_one li:hover {
+
+    padding-right: 10px;
+
+}
+
+.twoSlidS .categories .c_one li:not(.c_one li:last-of-type) {
+    border-bottom: 1px solid #99999914;
+    position: relative;
+}
+
+.twoSlidS .categories .c_one li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--main-color);
+    transition: all .5s;
+}
+
+.twoSlidS .categories .c_one li:hover::after {
+    width: 100%;
+}
+
+.twoSlidS .categories .c_one li span {
+    position: absolute;
+    left: 0;
+    padding: 1px 8px;
+    background: var(--secend-color);
+    color: #000;
+    font-size: 11px;
+}
+
+.twoSlidS .categories .c_two {
+    list-style: none;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+
+}
+
+.twoSlidS .categories .c_two h4 {
+    border-right: 2px solid var(--main-color);
+    padding-bottom: 15px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    padding-right: 10px;
+    font-size: 15px;
+    position: relative;
+    font-weight: bold;
+}
+
+.twoSlidS .categories .c_two li {
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+.twoSlidS .categories .c_two li label {
+    margin-right: 5px;
+}
+
+.twoSlidS .categories .c_three {
+    list-style: none;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+
+
+}
+
+.twoSlidS .categories .c_three h4 {
+    border-right: 2px solid var(--main-color);
+    padding-bottom: 15px;
+    padding-top: 10px;
+    border-bottom: 1px solid rgb(0 0 0 / 8%);
+    padding-right: 10px;
+    font-size: 15px;
+    position: relative;
+    font-weight: bold;
+}
+
+.twoSlidS .categories .c_three h4 span {
+
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    background-color: #0033bd3b;
+    border-radius: 50%;
+    padding: 1px 7px;
+    line-height: 20px;
+}
+
+.twoSlidS .categories .c_three li {
+    font-size: 15px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.twoSlidS .categories .c_three li input {
+    cursor: pointer;
+}
+
+.twoSlidS .categories .c_three li label {
+    margin-right: 5px;
+}
+
+.twoSlidS .categories .c_three li i {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: block;
+    color: var(--secend-color);
+}
+
+@media (max-width:992px) {
+
+    .twoSlidS .categories .c_one li span {
+        font-size: 10px;
+    }
+
+    .twoSlidS .categories .c_one li {
+        font-size: 14px;
+    }
+
+    .twoSlidS .categories .c_two h4 {
+        font-size: 13px;
+    }
+
+    .twoSlidS .categories .c_two li {
+        font-size: 13px;
+    }
+
+    .twoSlidS .categories .c_three li {
+        font-size: 13px;
+    }
+
+    .twoSlidS .categories .c_three h4 {
+        font-size: 13px;
+    }
+
+    .twoSlidS .categories .c_three {
+        padding-right: 10px;
+        padding-left: 15px;
+    }
+
+    .twoSlidS .categories .c_two {
+        padding-right: 10px;
+    }
+
+    .twoSlidS .categories .c_one {
+        padding-right: 15px;
+        padding-left: 12px;
+    }
+}
+
+
+@media (max-width:992px) {
+
+    .twoSlidS .categories .c_three li i {
+        display: none;
+    }
+    .twoSlidS .categories .c_three li label {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width:560px) {
+    .twoSlidS .categories .c_one li span {
+        display: none;
+    }
+    .twoSlidS .categories .c_one li i {
+        display: none;
+    }
+    .twoSlidS .categories .c_one h4 {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-right: none;
+        padding: 0;
+        padding-bottom: 5px;
+
+    }
+    .twoSlidS .categories .c_one {
+        text-align: center;
+    }
+    .twoSlidS .categories .c_one li {
+        font-size: 13px;
+    }
+    .twoSlidS .categories .c_three h4 {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-right: none;
+        padding: 0;
+        padding-bottom: 7px;
+        padding-top: 7px;
+        padding-right: 5px;
+        padding-left:5px
+    }
+    .twoSlidS .categories .c_three li input {
+        display: none;
+    }
+    .twoSlidS .categories .c_three {
+        text-align: center;
+        padding: 0;
+    }
+    .twoSlidS .categories .c_three li label {
+        font-size: 13px;
+        color: #555;
+    }
+}
+
+
+@media (max-width:768px) {
+
+
+    .twoSlidS .categories .c_three li label {
+        font-size: 10px;
+    }
+}

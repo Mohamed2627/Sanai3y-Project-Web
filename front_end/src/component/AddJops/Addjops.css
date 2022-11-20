@@ -1,0 +1,207 @@
+.form_Addjops input:focus {
+    border: 2px solid var(--main-color);
+}
+
+.form_Addjops input {
+    outline: none;
+    border: none;
+    background-color: rgb(246, 245, 245);
+    border: 2px solid rgb(246, 245, 245);
+
+}
+
+.form_Addjops select,
+textarea {
+    outline: none;
+    background-color: rgb(246, 245, 245);
+    border: 2px solid rgb(246, 245, 245);
+}
+
+option:hover {
+    background-color: var(--main-color);
+}
+
+select:focus,
+textarea:focus {
+    border: 2px solid var(--main-color);
+}
+
+/* body{
+    background-color: gainsboro;
+  } */
+
+.Title_Addjops {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    color: var(--font-color);
+    text-align: center;
+}
+
+.Title_Addjops::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: var(--font-color);
+    margin-top: -5px;
+}
+
+.Title_Addjops::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color);
+    z-index: 1;
+}
+
+main .parent_AddJop {
+    font-size: .8rem;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 6px 0;
+}
+
+main .container h1 {
+    margin-bottom: 20px;
+}
+
+main .container .parent-addr {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+main .container form .main-addr {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+
+main .container form .main-addr #city {
+    padding: 7px;
+}
+
+main .container form {
+    padding: 20px 0;
+    border-radius: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+main .container form .detail-addr {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+
+main .container form .detail-addr input {
+    padding: 12px 0px;
+    padding-right: 10px;
+
+
+}
+
+main .container form .add-pic {
+    height: 45px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+main .container form .business #business {
+    width: 100%;
+    padding: 8px;
+}
+
+main .container form .descript-jop textarea {
+    width: 100%;
+
+}
+
+main .container form #submit {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 2px solid var(--button-color);
+    color: #000;
+    border-radius: 5px;
+    font-weight: 900;
+    transition: all .4s;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+main .container form #submit:hover {
+    color: #fff;
+    background-color: var(--button-color);
+    transition: all .4s;
+}
+
+/* responsive */
+@media (min-width:1200px) {
+
+    main .container {
+        width: 70%;
+    }
+
+}
+
+@media (max-width:980px) {
+    main .container {
+        width: 90vw;
+    }
+
+}
+
+@media (max-width:770px) {
+    main .container {
+        max-width: 95vw;
+    }
+}
+
+@media (max-width:560px) {
+
+    main .container .parent-addr,
+    main .container form .price {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 11px;
+    }
+
+    main .container .parent-addr .detail-addr,
+    main .container .parent-addr .main-addr {
+        width: 100%;
+    }
+
+    main .container form .price .cost-day,
+    main .container form .price .main-cost {
+
+        width: 100%;
+    }
+
+    main .container form #submit {
+        display: block;
+        width: 50vw;
+        text-align: center;
+        margin: auto;
+    }
+}

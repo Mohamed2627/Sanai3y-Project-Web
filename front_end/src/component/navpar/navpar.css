@@ -1,0 +1,266 @@
+* a {
+    text-decoration: none !important;
+
+}
+
+.notificbtn {
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+}
+
+/* .notificList { */
+/* width: 30vw; */
+/* max-width: 10vw; */
+/* overflow-y: auto; */
+/* max-height: 70vh; */
+/* overflow-x: hidden; */
+/* } */
+
+
+
+.notification_toggle {
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    /* background-color: rgb(247, 188, 25); */
+    /* padding: 15px; */
+    width: 40vw;
+    /* height: 100px; */
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.one_notification {
+    text-align: center;
+    color: black;
+    background-color: whitesmoke;
+    /* margin-bottom: 40px; */
+    border-bottom: 1px solid rgb(234, 151, 8);
+    box-shadow: 0px 10px 10px gray;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .4s;
+}
+.one_notification:hover {
+
+    color: white;
+    background-color: var(--main-color);
+
+}
+
+.notification_icon {
+    cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3f0ce6;
+}
+
+
+/* ////////////////////// */
+.icon_nav_mesage {
+    display: none;
+}
+
+.navbar_project {
+    /* border-bottom: 1px solid #444; */
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.863);
+}
+
+.navbar li i {
+    color: var(--main-color);
+    margin-left: 8px;
+}
+
+.navbar>div {
+    border-bottom: 1px solid #444;
+}
+
+.list_navpar a:hover {
+    color: #fff;
+}
+
+.list_navpar a {
+    position: relative;
+    margin: 0 8px;
+    font-size: 18px;
+    /* font-weight: 600; */
+    color: #fff;
+}
+
+.list_navpar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--main-color);
+    transition: width 0.3s ease-in;
+}
+
+.list_navpar:hover a::after {
+    width: 100%;
+}
+
+.login_reg_button {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login_reg_button i {
+    margin: 5px;
+    color: var(--main-color);
+}
+
+.login_reg_button a {
+    color: #fff;
+    transition: color 0.3s ease-in;
+}
+
+.login_reg_button a:hover {
+    color: var(--main-color);
+}
+
+.user_toogel {
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    background-color: #fff;
+    /* padding: 15px; */
+    width: 220px;
+    height: auto;
+}
+
+.user_content_navpar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.user_img_name {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    color: #000;
+    transition: color 0.2s;
+}
+
+.user_img_name img {
+    margin-bottom: 15px;
+}
+
+.user_img_name:hover {
+    color: #000;
+}
+
+.user_img_name h4:hover {
+    color: var(--main-color);
+}
+
+.btn_user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+    background-color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn_user i {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+.btn_user p {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.btn_user:hover {
+    background-color: #eee;
+    transform: scale(1.1);
+}
+
+.btn_user:focus {
+    background-color: #555;
+}
+
+.login_reg_nav {
+    display: flex;
+}
+
+.hoverIconNav :hover {
+    border-bottom: 1px solid var(--main-color);
+}
+
+/* /* media  */
+
+@media (max-width:576px) {
+    .chat_notif {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width:991px) {
+    .icon_nav_mesage {
+        display: inline-block;
+    }
+
+    .icon_nav_mesage .slot {
+        margin-left: 5px;
+    }
+
+    .list_navpar a {
+        margin: 0;
+    }
+
+    .login_reg_nav {
+        display: none !important;
+    }
+
+    .navbar_project ul li {
+        margin-bottom: 10px;
+    }
+}
+
+.active {
+    color: #ffb200 !important;
+
+}

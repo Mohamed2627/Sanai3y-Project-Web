@@ -1,0 +1,53 @@
+body {
+  direction: rtl;
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: cairo !important;
+  
+  
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  display: block;               
+}
+
+body::-webkit-scrollbar-track {
+  background: #eee;      
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000;   
+  border-radius: 5px;       
+  border: 1px solid orange; 
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: cairo;
+  src: url(../public/fontfamily/Cairo/Cairo-VariableFont_wght.ttf);
+}
+:root{
+  font-size: 20px;
+  --main-color: #ffb200;
+  --secondry-color :#212529;
+  --backgrond-color: #fafafa;
+  --font-color: #000; 
+  --button-color: #ffb200;
+  --hover-color: #fff;
+}
+
+active {
+
+  color: 'red';
+  background-color:'blue';
+
+}

@@ -1,0 +1,40 @@
+.icon_jops{
+    position: fixed;
+    left: -120px;
+    top: 50%;
+    z-index: 1000;
+    padding: 5px 8px;
+    background-color: var(--main-color);
+    color: #fff;
+    transition: all 0.5s;
+}
+.icon_jops:hover{
+    left: 0;
+}
+
+.icon_jops button{
+    border: none;
+    background-color: transparent;
+}
+
+.icon_jops button i{
+    margin-left: 8px;
+}
+
+/* Media */
+@media (max-width:780px) {
+    .icon_jops{
+        left: -120px;
+    }
+}
+
+@media (max-width:707px) {
+    .icon_jops{
+        left: -111px;
+    }
+}
+@media (max-width:560px) {
+    .icon_jops{
+        left: -95px;
+    }
+}

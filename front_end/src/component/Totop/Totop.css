@@ -1,0 +1,24 @@
+
+.Top_btn{
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    width: 70px;
+    z-index: 100000;
+}
+.Top_btn button{
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+
+}
+.Top_btn button img{
+    width: 100%;
+}
+.hidden_Totop{
+    display: none;
+}
+.showToTop{
+    display: block;
+}

@@ -1,0 +1,232 @@
+
+
+
+
+.containerr{
+   position: relative;
+   direction: rtl;
+   margin: 5vh auto;
+   box-sizing: border-box;
+   background: #FFF;
+   
+}
+.containerr .box{
+   position: relative;
+   width: 100%;
+   padding: 20px 20px 30px 20px;
+   box-sizing: border-box;
+   border-left: 5px solid #262626;
+   box-shadow: #eeeeeeb5;
+   transition: all .5s;
+   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.containerr .box:hover{
+   background: #eeeeee69;
+}
+.containerr .box::before{
+   content: '';
+   position: absolute;
+   left: -12px;  top: 24px;
+   width: 20px;   height: 20px;
+   background: #262626;
+   border-radius: 50%;
+   transition: all .5s;
+
+}
+.containerr .box:hover::before{
+  
+   background: #ffb200;
+}
+
+.containerr .box .category{
+    display: inline-block;
+    background: #999;
+    color: #fff;
+    border-radius: 50px;
+    padding: 2px 25px;
+    font-size: 16px;
+    transition: all .5s;
+}
+.containerr .box:hover .category{
+    background: #dbe8d8;
+    color: #000;
+}
+.containerr h1 {
+    margin: 0 !important;
+}
+.containerr .status {
+
+    background-color: #999;
+    border-radius: 30px;
+    margin-right: 10px;
+    padding: 6px 20px;
+    font-size: 16px;
+    color: #FFF;
+    display: inline-block;
+}
+.containerr .city {
+    font-size: 13px;
+    /* margin-right: 10px;   */
+    color: #888;
+    border-bottom: 1px solid #8883;
+}
+.containerr .box h1{
+    font-size: 22px;
+    margin: 5px 0;
+    border-right: 2px solid #ffb20073;
+    padding-right: 10px;
+}
+
+.containerr .box .diss{
+    color: #222;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+  
+}
+
+.containerr .ellipsis {
+
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s;
+    
+}
+
+.containerr .ellipsis:hover {
+    background-color: #FFF;
+}
+
+
+.containerr .formatDate {
+    /* margin-right: 5px; */
+    display: block;
+    /* margin-top: 10px; */
+    font-size: 15px;
+    color: #888;
+}
+
+.containerr .proposals {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    cursor: pointer;
+    background: #ffb200;  
+    color: #fff;
+     border-radius: 50px;
+     padding: 3px 20px;
+     transition-property: all;
+     transition-duration: .5s;
+     border-width: 1px;
+     border-color: #fff;
+     border-style: solid;
+
+}
+
+.containerr .edit_button_jobs_client {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    border: 1px solid #ffb200;
+    color: #ffb200;
+    background-color: #FFF;
+    border-radius: 5px;
+    transition: all .5s;
+
+}
+.containerr .edit_button_jobs_client:hover {
+    background-color: #ffb200;
+    color: #FFF;
+}
+
+.containerr .edit_header_job_client {
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+
+}
+.containerr .edit_header_job_client h1 {
+    padding: 0;
+    padding-right: 10px;
+    font-size: 18px !important;
+    border-right: 1px solid #ffb200;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 10px !important;
+}
+
+.containerr .edit_header_job_client button {
+    font-size: 15px;
+}
+
+.containerr .edit_body_jobs_client {
+    padding: 10px 10px 5px 10px;
+ 
+}
+
+.containerr .edit_body_jobs_client h5 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.containerr .edit_button_no {
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #000;
+    padding: 3px 20px;
+    font-size: 15px; 
+    border-radius: 5px;
+
+    display: table;
+    transition: all .5s;
+    cursor: none;
+}
+.containerr .edit_button_no:hover {
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #000;  
+}
+.containerr .edit_button_no:checked {
+    background-color: #000;
+    color: #FFF;
+    border: 1px solid #000;  
+}
+
+.containerr .edit_button_ac {
+    background-color: #FFF;
+    color: #ffb200;
+    border: 1px solid #ffb200;
+    padding: 3px 20px;
+    font-size: 15px; 
+    border-radius: 5px;
+
+    display: table;
+    transition: all .5s;
+    
+}
+
+.containerr .edit_button_ac:hover {
+    background-color: #ffb200;
+    border: 1px solid #ffb200;
+    color: #FFF;
+}
+.parent_two_button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.parent_two_button span {
+    font-size: 12px;
+    background: #EEE;
+    line-height: normal;
+    padding: 2px 10px;
+    border-radius: 15px;
+
+}

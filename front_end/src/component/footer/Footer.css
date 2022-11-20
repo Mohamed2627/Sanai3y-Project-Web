@@ -1,0 +1,112 @@
+/* Start Footer */
+footer{
+    background-image: url("../../images/landing/background-footer.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 50px;
+    margin-top: 100px;
+}
+
+.contint_about_page h4{
+    position: relative;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+.contint_about_page h4::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+}
+.sochial{
+    margin-top: 15px;
+}
+.sochial a{
+    color: white;
+    margin: 5px;
+    transition: color 0.5s;
+}
+.sochial a:hover{
+    color: var(--main-color);
+}
+.contint_about_page p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.contint_about_page ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    
+}
+.contint_about_page ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.contint_about_page ul li a{
+    color: white;
+    transition: color 0.5s;
+}
+.contint_about_page ul li a:hover{
+    color: var(--main-color);
+}
+.contint_about_page ul li i {
+    font-size: 0.5rem;
+    color: var(--main-color);
+    margin-left: 10px;
+}
+/* End Footer */
+
+.finall{
+    width: 100%;
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: var(--main-color);
+}
+.finall p{
+    margin: 0;
+}
+
+.finall p span{
+    color: #fff;
+}
+
+/* media Quiry */
+@media (max-width:991px){
+    .contint_about_page h4::after{
+        width: 200px;
+        right: -50% ;
+    }
+    .contint_about_page .footer_locathion::after{
+        right: -70%;
+        
+    }
+    .contint_about_page .footer_about::after {
+        right: -15% ;
+    }
+}
+@media (max-width:575px) {
+    :root{
+        font-size: 15px;
+    }
+    .contint_about_page{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 30px auto;
+    }
+    .finall p {
+        font-size: 15px;
+    }
+   
+}

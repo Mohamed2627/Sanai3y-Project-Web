@@ -1,0 +1,56 @@
+
+
+
+.navication_bar {
+    margin-top: 30px;
+}
+.navbar_right {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 50px 0; 
+}
+
+.navbar_right h3 {
+    text-align: right;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    padding-right: 10px;
+   
+}
+.navbar_right ul {
+    padding: 0;
+}
+.navbar_right ul li {
+
+    padding: 10px 10px;
+    list-style: none;
+    position: relative;
+    font-size: 15px;
+}
+
+.navbar_right ul li a {
+    text-decoration: none;
+    /* display: flex;
+    justify-content: space-between; */
+
+}
+.navbar_right .titel {
+    margin-right: 7px;
+    color: #000;
+    font-size: 17px;
+
+}
+.navbar_right .check_title {
+    position: absolute;
+    left: 0;
+}
+
+.navbar_right ul li a .icon {
+    color: #198754; /* Test */
+}
+
+.navbar_right ul li a .icon ion-icon {
+    font-size: 1.75em;
+}

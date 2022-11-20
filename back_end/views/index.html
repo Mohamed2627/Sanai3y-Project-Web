@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- -------------------------------------- -->
+    <title>Multer Tutorial</title>
+</head>
+
+<body>
+    <main>
+        <div class="admin__upload-file">
+            <form action="http://localhost:7000/sanai3y/addwork" enctype="multipart/form-data" method="post">
+                <input type="file" id="jobImage" name="workImage"/>
+                <input type="text" placeholder="title" id="myFile" name="title"/>
+                <input type="text" placeholder="description" id="myFile" name="description"/>
+                <input class="admin__submit" type="submit" />
+            </form>
+        </div>
+
+        <!-- Images of the job -->
+        <!-- <div class="admin__upload-file">
+            <form action="http://localhost:7000/jobs/postjob" enctype="multipart/form-data" method="post">
+                <input type="file" id="jobImage" name="jobImage" multiple/>
+                <input type="text" placeholder="title" id="myFile" name="title"/>
+                <input type="text" placeholder="description" id="myFile" name="description"/>
+                <input class="admin__submit" type="submit" />
+            </form>
+        </div> -->
+
+        <!-- Image of Sanai3y Profile -->
+        <!-- <div class="admin__upload-file">
+            <form action="http://localhost:7000/sanai3y/addimage" enctype="multipart/form-data" method="post">
+                <input type="file" id="jobImage" name="sanai3yImage" multiple/>
+                <input type="text" placeholder="title" id="myFile" name="title"/>
+                <input type="text" placeholder="description" id="myFile" name="description"/>
+                <input class="admin__submit" type="submit" />
+            </form>
+        </div> -->
+
+        <div>
+            <img src="http://localhost:7000/uploads/IMG_20200111_182439.jpg" alt="Bolla" style="width: 400px; height:300px">
+        </div>
+    </main>
+    <!-- <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        let socket = window.io();
+        socket.emit("msg",{image:"photo",user:"mohamed"});
+        socket.on('test',function(data)
+        {
+            console.log(data);
+        })
+        
+    </script> -->
+</body>
+
+</html>

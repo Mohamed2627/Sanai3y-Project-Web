@@ -1,0 +1,12 @@
+.notfind{
+    text-align: center;
+    margin-top: 70px;
+}
+.notfind img{
+    width: 70%;
+    margin-bottom: 30px;
+}
+.notfind p{
+    font-weight: 600;
+    font-size: 25px;
+}
