@@ -1,0 +1,152 @@
+
+.main {
+    /* background-color: white; */
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    height: 0;
+    display: grid;
+    grid-template-rows: 450px 800px 1060px 790px 300px;
+    gap: 30px
+}
+
+
+/* Start Content Left cardinfo */
+.cardinfo {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    font-weight: 700;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    margin-bottom: 20px;
+}
+
+.cardinfo .imeg {
+    display: flex;
+    flex-direction: column;
+}
+.cardinfo .under_images {
+    padding: 20px 1px; 
+}
+.cardinfo .under_images .titel {
+    padding: 8px 1px;
+    display: flex;
+    align-items: center;
+
+}
+.cardinfo .under_images i:not(i:nth-child(1)) {
+    color:#ffb200 ;
+}
+.cardinfo .under_images .titel span {
+    margin-right: 10px;
+    align-items: flex-end;
+}
+.cardinfo .under_images .titel .fa-plug {
+    color: #ffb200;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #eee
+}
+.cardinfo .info .name_Person {
+    display: block;
+}
+.cardinfo .info .name_Person h3 {
+    border-right: 2px solid #999;
+    padding-right: 10px;
+    margin-bottom: 15px;
+
+}
+.cardinfo .info .more_data {
+
+    padding: 7px 0px;
+    width: 134px;
+    display: flex;
+    justify-content: stretch;   
+    align-items: center
+}
+
+.cardinfo .info .more_data i {
+    margin-left: 10px;
+    color: #000000b8;
+    cursor: pointer
+}
+
+.cardinfo .info .descrabtion {
+
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    position: relative;
+    
+}
+.cardinfo .info .descrabtion::before {
+    position: absolute;
+    content: "";
+    width: 170px;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    background-color: #00000024;
+    text-align: center;
+}
+.cardinfo .info .descrabtion h3 {
+    font-size: 21px;
+    padding-bottom: 5px;
+}
+.cardinfo .info .descrabtion p {
+    font-size: 15px;
+    color: #555;
+}
+.infopro {
+    color: black;
+}
+
+.infopro a {
+    pointer-events: none;
+    color: black;
+    text-decoration: none;
+}
+
+.cardinfo1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cardinfo1 .cardimage {
+    width: 400px;
+    height: 100;
+    border-radius: 14px;
+    /* background-image: url("../Image/png-transparent-silhouette-of-man-laborer-silhouette-euclidean-survey-of-construction-workers-silhouette-man-silhouette-cartoon-tree-silhouette-thumbnail.png"); */
+    display: grid;
+    grid-template-rows: 50% 50%;
+
+}
+
+.cardimage .cardPragraph2 {
+    background-color: var(--green);
+    display: contents;
+    border-top-right-radius: 59px;
+}
+
+.cardPragraph2 img {
+    border-radius: 60px;
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cardPragraph2:hover {
+    display: inline-flex;
+}
+
+.cardinfo2 {
+    background-color: hotpink;  
+}
+
+

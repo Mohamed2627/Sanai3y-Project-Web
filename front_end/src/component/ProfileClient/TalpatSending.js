@@ -7,30 +7,30 @@ import { Modal, ModalClose, Sheet, Typography } from "@mui/joy";
 
 import Notfind from "../notfind/Notfind";
 import { useSelector } from "react-redux";
-import  {io}  from "socket.io-client";
+import { io } from "socket.io-client";
 import { NavLink, useNavigate } from "react-router-dom";
 
-function TalpatSending({navigatedJob}) {
+function TalpatSending({ navigatedJob }) {
   const [Job, setJobs] = useState([]);
   const [open, setOpen] = useState(false);
   const [oopeen, setOpenUp] = useState(false);
   const [flagNoMore, setFlagNoMore] = useState(false);
-  const naviga = useNavigate()
+  const navigate = useNavigate()
   ////////////////////////////////////////////
   // The current user
-  const currentUser = useSelector ((state) => state.userReducer.userData);
+  const currentUser = useSelector((state) => state.userReducer.userData);
 
   // console.log(currentUser)
 
-    // The socket
-const [socket, setSocket] = useState(null)
+  // The socket
+  const [socket, setSocket] = useState(null)
 
-useEffect(() => {
-  setSocket(io("http://localhost:7000", { 
+  useEffect(() => {
+    setSocket(io("http://localhost:7000", {
       transport: ['websocket', 'polling', 'flashsocket'],
       // withCredentials: true 
-  }))
-}, [])
+    }))
+  }, [])
 
 
   function huntJob(i) {
@@ -38,7 +38,7 @@ useEffect(() => {
     axios.put(`http://localhost:7000/sanai3y/huntjob/${i}`).then((result) => {
       // console.log(result.data.data._id);
       let clientName = `${currentUser?.firstName} ${currentUser?.lastName}`;
-      let body = {type: "acceptjob", sanai3yId: result.data.data.sanai3yId, proposalId: i, jobId: result.data.data._id, notification: ` قام ${clientName} بقبول طلبك المقدم على وظيفته  ` }
+      let body = { type: "acceptjob", sanai3yId: result.data.data.sanai3yId, proposalId: i, jobId: result.data.data._id, notification: ` قام ${clientName} بقبول طلبك المقدم على وظيفته  ` }
       // console.log(body);
 
       if (result.status === 200) {
@@ -57,7 +57,7 @@ useEffect(() => {
       }
     });
   }
-/////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////
   // Get Token From Storage And Create Object Containe Title And Description
   const token = localStorage.getItem("token");
   const [state, setState] = React.useState({
@@ -101,14 +101,14 @@ useEffect(() => {
       })
       .then((res) => {
         // console.log(res.data.Data)
-        if (navigatedJob.length !== 0){
+        if (navigatedJob.length !== 0) {
           setJobs([...navigatedJob])
         }
         else {
           let jobClient = res.data.Data;
           setJobs([...jobClient]);
         }
-        
+
       });
   }, []);
 
@@ -125,7 +125,7 @@ useEffect(() => {
   };
   function sendIdJob(id) {
     axios
-      .delete(`http://localhost:7000/jobs/delete/${id}`,{ headers: header })
+      .delete(`http://localhost:7000/jobs/delete/${id}`, { headers: header })
       .then((res) => {
         // console.log(res);
         if (res.status == 200) {
@@ -138,20 +138,20 @@ useEffect(() => {
   }
 
 
-// console.log("hello" + idClient)
+  // console.log("hello" + idClient)
 
   // Function Close Job
-  function compeleteConfirmJob(idSanaiy){
-    axios.put("http://localhost:7000/client/confirmjob",{'sanai3yId':idSanaiy}).then(
-      (res)=>{
+  function compeleteConfirmJob(idSanaiy, id) {
+    axios.put("http://localhost:7000/client/confirmjob", { 'sanai3yId': idSanaiy, jobId: id }).then(
+      (res) => {
         console.log(res)
-        if(res.status == 200){
+        if (res.status == 200) {
           // console.log("succes Man")
           window.location.reload(true)
 
         }
       }
-    ).catch((err)=> console.log(err))
+    ).catch((err) => console.log(err))
   }
 
 
@@ -191,20 +191,21 @@ useEffect(() => {
                 </button>
 
                 {/* Button Last End The Job With Client */}
-                <div className="d-flex justify-content-end" style={{marginBottom:'10px', marginRight:'10px'}}>
-                 
-                {d.status == 'pending' ? (
+                <div className="d-flex justify-content-end" style={{ marginBottom: '10px', marginRight: '10px' }}>
 
-                  <div style={{fontSize:'15px', backgroundColor:'#EEE', padding:'10px', marginLeft:'10px'}}>حتي الان لم توظف احد </div>
-                ):(
-                  <button onClick={() =>  compeleteConfirmJob(d.sanai3yId)} className={d.status == "compelete"?"btn btn-secondary": "finish_btn"}>
-                  التاكيد علي الانتهاء
-                  {d.status == "compelete" &&<i class="fa-solid fa-lock me-1" style={{color:"#000"}}></i>}
-                </button>
-                )}
+                  {d.status == 'pending' ? (
+
+                    <div style={{ fontSize: '15px', backgroundColor: '#EEE', padding: '10px', marginLeft: '10px' }}>حتي الان لم توظف احد </div>
+                  ) : (
+                    // <button onClick={() =>  compeleteConfirmJob(d.sanai3yId, d._id)} className={d.status == "compelete"?"btn btn-secondary": "finish_btn"}>
+                    <button onClick={() => compeleteConfirmJob(d.sanai3yId, d._id)} className={d.jobConfirm ? "btn btn-secondary" : "finish_btn"}>
+                      التاكيد علي الانتهاء
+                      {d.status == "compelete" && <i class="fa-solid fa-lock me-1" style={{ color: "#000" }}></i>}
+                    </button>
+                  )}
 
 
-                
+
 
                 </div>
 
@@ -243,13 +244,21 @@ useEffect(() => {
                                     aria-label="Close"
                                   > */}
 
-                                    <h5 className="card-title"
-                                                                        
-                                    >
-                                      {one.sanai3yId.firstName +
-                                        " " +
-                                        one.sanai3yId.lastName}
-                                    </h5>
+                                  <div onClick={() => {
+                                    navigate(`/showprofile/${one?.sanai3yId._id}`);
+                                    window.location.reload(true)
+                                  }}
+                                    className="sanai3yName"
+                                  >
+                                    <div className="name-photo">
+                                      <img src={one.sanai3yId?.img} style={{width: "40px", height: "40px"}} alt="sanai3yImage"/>
+                                      <h5 className="card-title sanai3y-name">
+                                        {one.sanai3yId.firstName +
+                                          " " +
+                                          one.sanai3yId.lastName}
+                                      </h5>
+                                    </div>
+                                  </div>
                                   {/* </NavLink> */}
                                   <p
                                     className="card-text"
@@ -265,9 +274,9 @@ useEffect(() => {
                                   <span className="parent_two_button">
                                     <span>{one.sanai3yId.skills}</span>
 
-                                    {d.status == "in progress" || d.status == "compelete"  ? (
+                                    {d.status == "in progress" || d.status == "compelete" ? (
                                       <button
-                                        
+
                                         className="btn btn-info edit_button_no"
                                       >
                                         تم التاكيد

@@ -118,14 +118,14 @@ function Posts({ datas }) {
             </span>
           </div>
 
-          <NavLink to={`/showprofileC/${data.clientData?._id}`}>
+          <NavLink to={`/showprofileC/${data?.clientData._id}`}>
             <div className="img_name" style={{ color: "#000" }}>
               <div className="images">
-                <img src={data.clientData?.img} alt="" />
+                <img src={data?.clientData.img} alt="" />
               </div>
 
               <div className="name">
-                <span>{`${data.clientData?.firstName} ${data.clientData?.lastName}`}</span>
+                <span>{`${data?.clientData.firstName} ${data?.clientData.lastName}`}</span>
                 <span>{dateFormat(data?.hiredDate, " h:MM  TT")}</span>
                 {/* <span>{data.adressuder}</span> */}
               </div>
@@ -320,7 +320,7 @@ function Posts({ datas }) {
           {/* Show Details */}
           <div
             className="modal modal-xl fade"
-            id={`Taha${data._id}`}
+            id={`Taha${data?._id}`}
             data-bs-backdrop="static"
             data-bs-keyboard="false"
             tabIndex="-1"
@@ -353,14 +353,14 @@ function Posts({ datas }) {
                     <div className="d-flex">
                       <div className="ms-2">
                         <div className="edit_image_about_job">
-                          <img src={data.clientData?.img} />
+                          <img src={data?.clientData.img} />
                         </div>
                       </div>
 
                       <div className="col-5">
                         <div className="edit_data_about_job">
-                          <h5>{`${data.clientData?.firstName} ${data.clientData?.lastName}`}</h5>
-                          <p>{data.clientData?.address}</p>
+                          <h5>{`${data?.clientData.firstName} ${data?.clientData.lastName}`}</h5>
+                          <p>{data?.clientData.address}</p>
                         </div>
                       </div>
                     </div>
@@ -370,17 +370,17 @@ function Posts({ datas }) {
                     <div className="col-md-6 ">
                       <div className="card-body">
                         <strong className="m-0 mt-3">عنوان الطلب : </strong>
-                        <h5 className="card-title">{`${data.title}`}</h5>
+                        <h5 className="card-title">{`${data?.title}`}</h5>
                         <br />
                         <strong className="m-0 mt-5">وصف الطلب :</strong>
-                        <p className="card-text">{`${data.description}`}</p>
+                        <p className="card-text">{`${data?.description}`}</p>
                       </div>
                     </div>
 
                     <div className="col-md-6">
                       <img
                         className="img-thumbnail"
-                        src={data.image}
+                        src={data?.image}
                         alt="image talap"
                       />
                     </div>

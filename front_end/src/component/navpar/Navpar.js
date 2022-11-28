@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import './navpar.css'
 import logo from '../../images/landing/logo.png'
 import user from '../../images/landing/user.png'
-import { useNavigate, NavLink } from 'react-router-dom'
+import { useNavigate, NavLink, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Snai3ycontext } from '../ProfileSnai3y/context'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,11 +10,21 @@ import { getDataClient } from '../../Redux/Slices/ClientReducer'
 import { getSnai3y, logOutSnai3y } from '../../Redux/Slices/Snai3yReducer'
 import Notifications from '../notifications/Notifications'
 import axios from 'axios'
+import { setNewMessag } from '../../Redux/Slices/userReducer'
 
 
 
 
 function Navpar({ socket }) {
+
+    // const params = useParams();
+    const recieverId = useSelector((state) => state.userReducer.recieverId)
+    // const recieverId = useParams().recieverId;
+    // console.log(params)
+
+    let dispatch = useDispatch()
+    // The message badge
+    const [messageBadge, setMessageBadge] = useState(false);
 
     // The badge
     const [badge, setBadge] = useState(false);
@@ -30,6 +41,7 @@ function Navpar({ socket }) {
 
     // The current User
     const currentUser = useSelector((state) => state.userReducer.userData);
+    
     console.log(currentUser._id, currentUser.rule)
 
     // // The current role
@@ -72,6 +84,19 @@ function Navpar({ socket }) {
         socket?.on("getconfirm", (data) => {
             setBadge(true);
             setNewNotifications(data);
+        })
+
+        // The message notifications
+        
+        socket?.on("recieveMessage", (data) => {
+            if (recieverId) {
+                setMessageBadge(false);
+                console.log("pppppppp")
+            }
+            else {
+                setMessageBadge(true);
+                console.log("uuuuuuuu");
+            }
         })
 
 
@@ -169,7 +194,16 @@ function Navpar({ socket }) {
     //     setBadge(false);
     // }
 
-
+    const readMessages = async () => {
+        try {
+            const res = await axios.put(`http://localhost:7000/client/readmessage/${currentUser?._id}`);
+            setMessageBadge(false);
+            dispatch(setNewMessag(false))
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    
     console.log(sanai3yNotifications)
     /////////////////////////////////////////////////////////////////////
 
@@ -198,7 +232,7 @@ function Navpar({ socket }) {
     const navigate = useNavigate()
     const imageUser = localStorage.getItem("image");
     const userName = localStorage.getItem("Name");
-    let dispatch = useDispatch()
+    
 
     function logout() {
 
@@ -353,8 +387,11 @@ function Navpar({ socket }) {
                                         src="https://cdn.lordicon.com/hpivxauj.json"
                                         trigger="click"
                                         colors="primary:#ffb200"
-                                        style={{ width: '40px', height: '35px', marginLeft: '20px' }}>
-                                        <span className='badge badge-danger bg-danger d-flex justify-content-center align-items-center ' style={{ width: '10px', height: '10px', fontSize: '1px' }}></span>
+                                        style={{ width: '40px', height: '35px', marginLeft: '20px' }}
+                                        onClick = {readMessages}
+                                        >
+                                        {(currentUser.newMessage || messageBadge) && <span className='badge badge-danger bg-danger d-flex justify-content-center align-items-center ' style={{ width: '10px', height: '10px', fontSize: '1px' }}></span>}
+                                        {/* {(messageBadge) && <span className='badge badge-danger bg-danger d-flex justify-content-center align-items-center ' style={{ width: '10px', height: '10px', fontSize: '1px' }}></span>} */}
                                     </lord-icon>
                                 </NavLink>
                             </div>}

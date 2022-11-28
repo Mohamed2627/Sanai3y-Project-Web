@@ -52,6 +52,10 @@ const jobsSchema = mongoose.Schema({
         },
         default: "pending"
     },
+    jobConfirm: {
+        type: Boolean,
+        default: false
+    },
     proposals: [{
         sanai3yId: {
             type: Object,

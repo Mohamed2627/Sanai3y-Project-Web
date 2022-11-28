@@ -11,7 +11,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-import { getUserData } from "../../Redux/Slices/userReducer";
+import { getUserData, setNewMessag } from "../../Redux/Slices/userReducer";
 import { setRecieverId } from "../../Redux/Slices/userReducer";
 import { io } from "socket.io-client";
 
@@ -76,6 +76,14 @@ export default function Messenger() {
                 text: text,
                 createdAt: Date.now()
             });
+            
+            // if (currentChat?.members.includes(recievedMessage.sender)) {
+            //     usedispatch(setNewMessag(false))
+            // }
+            // else {
+            //     usedispatch(setNewMessag(true))
+            // }
+            
         })
 
     }, [currentChat, recievedMessage, user])
@@ -101,8 +109,8 @@ export default function Messenger() {
 
             const paramConversation = conversations?.find((conversation) => conversation.members.includes(recieverId));
             setCurrentChat(paramConversation);
-            console.log(currentChat)
-            console.log(paramConversation)
+            console.log(currentChat);
+            console.log(paramConversation);
         }
     }, [conversations, currentChat, recieverId, usedispatch])
 
@@ -199,7 +207,7 @@ export default function Messenger() {
             sender: user?._id,
             text: newMessage
         };
-
+        const recieverId = currentChat?.members.find((id) => id !== user?._id);
         // Emitting event using socket
         socket.current.emit("sendMessage", {
             senderId: user?._id,
@@ -210,10 +218,11 @@ export default function Messenger() {
 
         // sending the request
         try {
-            const res = await axios.post("http://localhost:7000/messages", message);
+            const res1 = await axios.post("http://localhost:7000/messages", message);
             // console.log(res.data.data);
-            setMessages([...messages, res.data.data]);
+            setMessages([...messages, res1.data.data]);
             setNewMessage("");
+
         } catch (err) {
             console.log(err)
         }

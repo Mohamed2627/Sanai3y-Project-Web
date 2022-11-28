@@ -7,9 +7,12 @@ export const userReducer = createSlice({
     name:"userData",
     initialState:{userData:{}, recieverId: ""},
     reducers:{
-        setUserData: (state,action)=>{
+        setUserData: (state, action)=>{
 
             state.userData=action.payload
+        },
+        setNewMessag: (state, action) => {
+            state.userData.newMessage = action.payload
         },
         setRecieverId: (state, action) => {
             state.recieverId = action.payload
@@ -30,6 +33,6 @@ export const getUserData =()=> async (dispatch) =>{
 
 
 
-export const {setUserData, setRecieverId} = userReducer.actions
+export const {setUserData, setRecieverId, setNewMessag} = userReducer.actions
 // export const showSnai3yData = (state)=> state.Snai3yData.data
 export default userReducer.reducer

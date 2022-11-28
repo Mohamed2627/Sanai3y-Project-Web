@@ -1,0 +1,93 @@
+.card{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: var(--yellow);
+    justify-content: space-between;
+    /* height: 250px;  */
+    border: none;
+
+}
+.card .card1{
+    position: relative;
+    background: linear-gradient(-90deg,#84d9d2,#07cdae);
+    color: aliceblue;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius:.5rem;
+    display:flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 30%;
+    
+}
+
+.card .card1 div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.card .card1 div section{
+    flex-direction: column;
+}
+.card .card1 .unmber{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color:  aliceblue;
+}
+.card .card1 .namecard
+ {
+    color:  aliceblue;
+font-size:1.5em ;
+margin-top:5px ;
+}
+.card .card1 .iconBox
+ {
+ color:  aliceblue;
+font-size:2.5em ;
+margin-right: 10px;
+}
+
+.card .card1:hover .namecard,
+.card .card1:hover .unmber,
+.card .card1:hover .iconBox{
+    color: white;
+}
+.card .Jobs,.card .Clients,.card .Sanai3y{
+    /* display: none; */
+    /* position: relative;
+    left: 37%; */
+    /* text-align: center; */
+    /* border: #bfbfbf 1px solid; */
+    padding: 15px;
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
+    margin-bottom: 20px;
+}
+
+.card .statistic1,.card .statistic2,.card .statistic3{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+/* .marg{
+    margin-left: 16px;
+} */
+
+@media (max-width:800px){
+    .card .card1{
+   width: 100%;
+
+   justify-content: center;
+    }
+    .card .card1 div{
+        flex-direction: row;
+        text-align: center;
+    }
+}

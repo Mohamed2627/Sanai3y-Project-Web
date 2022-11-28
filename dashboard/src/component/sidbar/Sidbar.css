@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.navbar{
+    /* position: fixed; */
+    /* width: 370px; */
+    height: 100%;
+    background-color: #031737;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navbar.active{
+    width: 80px;
+    background-color: white;
+    }
+.navbar ul{
+    position: absolute;
+    top:0px;
+    left: -35px;
+    width: 100%;
+}
+.navbar ul li{
+    position: relative;
+    width:  100%;
+    list-style: none;
+    padding-left: 10px;
+    /* border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px; */
+
+}
+.navbar ul li:hover{
+    background-color: aliceblue;
+    width: 100vw;
+}
+.profile img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 8px solid #2c2f3f;
+  }
+   .profile h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    font-family: "Poppins", sans-serif;
+  }
+ .profile h1 a, #header .profile h1 a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  .profile .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+  }
+   .profile .social-links a:hover {
+    background: #149ddd;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+.navbar ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navbar ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color:aliceblue;
+    text-decoration:none;
+}
+.navbar ul li:hover a{
+    color:#031737;
+    font-weight: 600;
+}
+.navbar ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+  text-align: center;
+}
+.navbar ul li a .icon {
+    font-size:1.3rem;
+    line-height: 62px;
+   /* margin-right: 300px; */
+}
+.navbar ul li a .titel
+{
+    position: relative;
+    display: block;
+    padding:0 10px;
+    font-size: larger;
+    font-weight: 700px;
+    height:60px;
+    line-height:60px;
+    text-align:start;
+    white-space:nowrap;
+}
+/* .navbar ul li:hover a::before{
+content: "";
+position: absolute;
+top: -50px;
+right: 0px;
+width: 50px;
+height: 50px;
+background: transparent;
+border-radius:50px;
+box-shadow: 35px 35px 0 10px white ;
+pointer-events: none;
+}
+.navbar ul li:hover a::after{
+    content: " ";
+    position: absolute;
+    bottom: -50px;
+    right: 0px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius:50px;
+    box-shadow: 35px -35px 0 10px white;
+    pointer-events: none;
+    } */
+  

@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+}
+.red{
+  color: #61dafb;
+  background-color: black;
+}
+.t{
+  color: red;
+  background-color: aliceblue;
+}
+.App-logo {
+  height: 20vmin;
+  width: 30vmin;
+  /* padding: 10px; */
+  pointer-events: none;
+  background-image: url(./image/اسوان3\(5\).jpg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+:root{
+   
+    --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+    --orange: #fca61f;
+    --black: #242d49;
+    --gray: #788097;
+    --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+    --pink: #FF919D;
+    --glass: rgba(255, 255, 255, 0.54);
+    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+    --activeItem: #f799a354;
+}
+.appMain{
+  
+   
+    color: var(--black);
+    background: #fff;
+    height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+.appMAinNext{
+  display: grid;
+  height: 100%;
+  width: 97%;
+  background: #EFF1F3;
+  border-radius: 2rem;
+  /* gap: 16px; */
+  grid-template-columns: 15rem auto ;
+  /* overflow: hidden; */
+}

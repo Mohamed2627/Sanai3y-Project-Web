@@ -130,10 +130,9 @@ function Showprofile(props) {
 
                 </li>
               </ul>
-              
               <div>
-                      عدد الوظائف اللتي قبل فيها 
-                      ( {currentUser.jobs.length} )
+                عدد الوظائف اللتي قبل فيها
+                ( {currentUser.jobs?.length} )
 
               </div>
 

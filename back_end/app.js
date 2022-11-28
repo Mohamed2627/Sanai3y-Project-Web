@@ -91,12 +91,16 @@ io.on('connection', function (socket) {
             io.emit("getUsers", users);
         });
 
+        // The messages
         // Sending and recieving messages
         socket.on("sendMessage", ({ senderId, recieverId, text }) => {
             const reciever = getRecieverId(recieverId)
             // io.to(reciever?.socketId).emit("recieveMessage", { senderId, text })
             io.to(reciever?.socketId).emit("recieveMessage", { senderId, text })
         })
+
+        // Notifications of sending and recieving messages
+        
 
 
         // The notifications

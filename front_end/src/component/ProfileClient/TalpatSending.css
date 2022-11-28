@@ -172,7 +172,7 @@
 }
 
 .containerr .edit_body_jobs_client h5 {
-    margin: 0;
+    margin: 10px;
     font-size: 20px;
 }
 
@@ -229,4 +229,21 @@
     padding: 2px 10px;
     border-radius: 15px;
 
+}
+
+.sanai3yName {
+    cursor: pointer;
+    border: none;
+}
+
+.name-photo {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    /* justify-content: center; */
+
+}
+
+.sanai3y-name {
+    margin: 15px;
 }

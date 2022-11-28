@@ -68,6 +68,56 @@ route.post("/signup", async function (req, res) {
 
 })
 
+// When the user recieve a new message
+// route.put("/recievemessage/:recieverId", async (req, res) => {
+//     try {
+//         // get the current user with the help of id
+
+//         const client = await Client.findById(req.params.recieverId);
+//         // console.log(client);
+//         const sanai3y = await Sanai3y.findById(req.params.recieverId);
+//         if (client) {
+//             client.newMessage = true;
+//             client.save();
+//             res.status(200).json({ sucsess: true, message: "The message has been sent ", data: client });
+//         }
+//         else if (sanai3y) {
+//             sanai3y.newMessage = true;
+//             sanai3y.save();
+//             res.status(200).json({ sucsess: true, message: "The message has been sent", data: sanai3y });
+//         }
+//     } catch (err) {
+//         console.log(err)
+//         res.status(500).json({ sucsess: false, message: "There is error on recieving this message", TheError: err.message });
+//     }
+// })
+
+
+
+
+// When the user read the new message
+route.put("/readmessage/:userId", async (req, res) => {
+    try {
+        // get the current user with the help of id
+        const client = await Client.findById(req.params.userId);
+        // console.log(client);
+        const sanai3y = await Sanai3y.findById(req.params.userId);
+        if (client) {
+            client.newMessage = false;
+            client.save();
+            res.status(200).json({ sucsess: true, message: "The message has been sent ", data: client });
+        }
+        else if (sanai3y) {
+            sanai3y.newMessage = false;
+            sanai3y.save();
+            res.status(200).json({ sucsess: true, message: "The message has been sent", data: sanai3y });
+        }
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ sucsess: false, message: "There is error on recieving this message", TheError: err.message });
+    }
+})
+
 // Getting the data of the user ........ token is required
 route.get("/user", async function (req, res) {
     try {
@@ -195,6 +245,9 @@ route.put("/confirmjob", async (req, res) => {
         const sanai3y = await Sanai3y.findById(req.body.sanai3yId);
         sanai3y.status = "free";
         sanai3y.save();
+        const job = await Job.findById(req.body.jobId);
+        job.jobConfirm = true;
+        job.save();
         res.status(200).json({ success: true, message: "Job compelete confirmed and the status of sanai3y changed to free"});
 
     }catch (err) {
