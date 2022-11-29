@@ -27,14 +27,14 @@ route.post("/signup", async function (req, res) {
 
     try {
         const body = req.body;
-        const isSanai3yFound = await Sanai3y.findOne({ email: body.email })
+        const isSanai3yFound = await Sanai3y.findOne({ email: body.email.toLowerCase() })
         if (isSanai3yFound) {
             res.json({ sucsess: false, message: "You already have account" });
         }
         else {
             const cryptedPassword = await bcrypt.hash(body.password, 10);
 
-            const sanai3y = await Sanai3y.create({ ...body, password: cryptedPassword, jobcount: 5 });
+            const sanai3y = await Sanai3y.create({ ...body, password: cryptedPassword, jobcount: 5, email: body.email.toLowerCase() });
 
             console.log(sanai3y)
             const token = jwt.sign({ sanai3yId: sanai3y._id, email: sanai3y.email }, "secret_key");
@@ -87,6 +87,8 @@ route.post("/signup", async function (req, res) {
 //     }
 //   }
 // })
+
+
 
 
 // Adding images    The name of the image file must be "sanai3yImage"
@@ -177,7 +179,7 @@ route.put("/updateprofile", async function (req, res) {
     try {
         // get the current sanai3y with the help of current token
         const currentToken = req.headers.authorization;
-        const sanai3y = await Sanai3y.findOneAndUpdate({ token: currentToken }, {...req.body});
+        const sanai3y = await Sanai3y.findOneAndUpdate({ token: currentToken }, {...req.body, email: req.body.email.toLowerCase()});
         res.status(200).json({ success: true, message: "The profile updated successfully"});
 
         // 

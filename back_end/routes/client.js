@@ -24,13 +24,13 @@ const { json } = require("body-parser");
 route.post("/signup", async function (req, res) {
     try {
         const body = req.body;
-        const isClientFound = await Client.findOne({ email: body.email });
+        const isClientFound = await Client.findOne({ email: body.email.toLowerCase() });
         if (isClientFound) {
             res.send("You already have acount, You can signin")
         }
         else {
             const cryptedPassword = await bcrypt.hash(body.password, 10);
-            const client = await Client.create({ ...body, password: cryptedPassword });
+            const client = await Client.create({ ...body, password: cryptedPassword, email: body.email.toLowerCase() });
             // console.log(client)
             const token = jwt.sign({ clientId: client._id, email: client.email }, "secret_key");
             client.token = token;
@@ -164,8 +164,8 @@ route.post("/signin", async function (req, res) {
 
     try {
         const body = req.body;
-        const client = await Client.findOne({ email: body.email })
-        const sanai3y = await Sanai3y.findOne({ email: body.email })
+        const client = await Client.findOne({ email: body.email.toLowerCase() })
+        const sanai3y = await Sanai3y.findOne({ email: body.email.toLowerCase() })
         if (client) {
             const isValidPassword = await bcrypt.compare(body.password, client.password);
             if (isValidPassword) {
@@ -228,7 +228,7 @@ route.put("/updateprofile", async function (req, res) {
     try {
         // get the current client with the help of current token
         const currentToken = req.headers.authorization;
-        const client = await Client.findOneAndUpdate({ token: currentToken }, {...req.body});
+        const client = await Client.findOneAndUpdate({ token: currentToken }, {...req.body, email: req.body.email.toLowerCase()});
         res.status(200).json({ success: true, message: "The profile updated successfully"});
 
         // 
